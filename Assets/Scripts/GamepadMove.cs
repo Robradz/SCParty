@@ -6,10 +6,7 @@ using UnityEngine.InputSystem;
 
 public class GamepadMove : MonoBehaviour
 {
-    [SerializeField] Animator animator;
-
-    [SerializeField] private string horizontalInputName;
-    [SerializeField] private string vertticalInputName;
+    [SerializeField] public Animator animator;
 
     [SerializeField] private float movementSpeed;
     float forwardAmount;
@@ -20,23 +17,20 @@ public class GamepadMove : MonoBehaviour
 
     [SerializeField] private AnimationCurve jumpFallOff;
     [SerializeField] private float jumpMultiplier;
-    [SerializeField] private KeyCode jumpKey;
     float jumpForce;
 
     private bool isJumping = false;
-    private bool onGround = true;
+
+    public bool allowMovement;
 
     Vector2 i_movement;
 
     private void Awake()
     {
+        lookScript = GetComponent<GamepadLook>();
         charController = GetComponent<CharacterController>();
     }
 
-    private void Start()
-    {
-        lookScript = GetComponent<GamepadLook>();
-    }
 
     // Update is called once per frame
     void Update()
@@ -60,7 +54,15 @@ public class GamepadMove : MonoBehaviour
 
         forwardAmount = Math.Abs(forwardMovement.z);
 
-        charController.SimpleMove((forwardMovement + rightMovement)); // Accounts for Time.deltaTime
+        if (allowMovement)
+        {
+            charController.SimpleMove((forwardMovement + rightMovement)); // Accounts for Time.deltaTime
+        }
+        else
+        {
+            charController.SimpleMove(new Vector3 (0, 0));
+        }
+        
     }
 
     private void OnJumpPS2() { JumpInput(); }
@@ -71,7 +73,6 @@ public class GamepadMove : MonoBehaviour
         if (!isJumping)
         {
             isJumping = true;
-            print("Jump");
             StartCoroutine(JumpEvent());
         }
     }
