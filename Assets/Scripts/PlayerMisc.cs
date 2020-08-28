@@ -8,8 +8,14 @@ using UMA.CharacterSystem;
 
 public class PlayerMisc : MonoBehaviour
 {
+    [SerializeField] Transform playerTransform;
+    CharacterController characterController;
     private void Start()
     {
+        characterController = GetComponent<CharacterController>();
+        characterController.enabled = false;
+        playerTransform.position = new Vector3(GameObject.Find("Players").transform.childCount * 10f, 0, 0);
+        characterController.enabled = true;
         gameObject.transform.parent = GameObject.Find("Players").transform;
         NamePlayer();
         GetComponent<GamepadMove>().allowMovement = false;
@@ -19,7 +25,6 @@ public class PlayerMisc : MonoBehaviour
     private void NamePlayer()
     {
         gameObject.name = "P" + GameObject.Find("Players").transform.childCount.ToString();
-        gameObject.transform.position = new Vector3(10, 0, 10);
     }
 
     // Update is called once per frame

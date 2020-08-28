@@ -97,13 +97,17 @@ public class GamepadMove : MonoBehaviour
     private void UpdateAnimator()
     {
         float turnAmount = lookScript.turnAmount;
-        animator.SetFloat("Forward", forwardAmount, 0.1f, Time.deltaTime);
-        animator.SetFloat("Turn", turnAmount, 0.1f, Time.deltaTime);
-        animator.SetBool("OnGround", !isJumping);
-        if (!charController.isGrounded)
+        try
         {
-            animator.SetFloat("Jump", jumpForce);
+            animator.SetFloat("Forward", forwardAmount, 0.1f, Time.deltaTime);
+            animator.SetFloat("Turn", turnAmount, 0.1f, Time.deltaTime);
+            animator.SetBool("OnGround", !isJumping);
+            if (!charController.isGrounded)
+            {
+                animator.SetFloat("Jump", jumpForce);
+            }
         }
+        catch { }
     }
 
 }

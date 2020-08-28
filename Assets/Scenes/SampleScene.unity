@@ -399,13 +399,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: 0.8621316, y: -0.30324, z: 0.20112284, w: 0.35259646}
   m_LocalPosition: {x: -0.15, y: 23.43, z: 0.26}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 46.882, y: -191.216, z: -146.119}
 --- !u!1 &914989293
 GameObject:
   m_ObjectHideFlags: 0
@@ -611,7 +611,7 @@ MonoBehaviour:
         m_Action: Join
         m_Flags: 0
     m_Reference: {fileID: 0}
-  m_PlayerPrefab: {fileID: 6551238067823399045, guid: 29f87f9c7779447428dc7c857b9b95e7,
+  m_PlayerPrefab: {fileID: 6551238067823399045, guid: 28f8ad68b10caae489b99bb559a35693,
     type: 3}
   m_SplitScreen: 1
   m_MaintainAspectRatioInSplitScreen: 1
