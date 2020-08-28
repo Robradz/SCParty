@@ -19,6 +19,7 @@ public class CharacterSelect : MonoBehaviour
     [SerializeField] Camera playerCamera;
     [SerializeField] Text nameCanvas;
     private PlayerInput playerInput;
+    private AvailableCharacters availableCharacters;
 
     private int currentCharacter;
     private bool chosen = false;
@@ -26,6 +27,11 @@ public class CharacterSelect : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        availableCharacters = GetComponentInParent<AvailableCharacters>();
+        for (int i = 0; i < availableCharacters.available.Length; i++)
+        {
+            availableCharacters.available[i] = true;
+        }
         playerCamera.enabled = false;
         gamepadMove = GetComponent<GamepadMove>();
         playerInput = GetComponent<PlayerInput>();
@@ -62,13 +68,11 @@ public class CharacterSelect : MonoBehaviour
 
     private void Update()
     {
+        if (!availableCharacters.available[currentCharacter] && !chosen)
+        {
+            currentCharacter = (currentCharacter + 1) % characters.Length;
+        }
         nameCanvas.text = characters[currentCharacter].name;
-    }
-
-    private void OnChangeCharacter()
-    {
-        if(chosen) { return; }
-        currentCharacter = (currentCharacter + 1) % 4;
         for (int i = 0; i < characters.Length; i++)
         {
             if (i != currentCharacter)
@@ -83,7 +87,22 @@ public class CharacterSelect : MonoBehaviour
         }
     }
 
+    private void OnChangeCharacter()
+    {
+        if(chosen) { return; }
+        currentCharacter = (currentCharacter + 1) % 4;
+    }
+
     private void OnChooseCharacter()
+    {
+        ChangeCamera();
+        gamepadMove.allowMovement = true;
+        nameCanvas.enabled = false;
+        chosen = true;
+        availableCharacters.available[currentCharacter] = false;
+    }
+
+    private void ChangeCamera()
     {
         if (selectionCamera != null)
         {
@@ -93,9 +112,6 @@ public class CharacterSelect : MonoBehaviour
         playerCamera.enabled = true;
         playerInput.camera = playerCamera;
         PlayerCameraAlignment();
-        gamepadMove.allowMovement = true;
-        nameCanvas.enabled = false;
-        chosen = true;
     }
 
     private void PlayerCameraAlignment()

@@ -10,8 +10,10 @@ public class PlayerMisc : MonoBehaviour
 {
     [SerializeField] Transform playerTransform;
     CharacterController characterController;
+
     private void Start()
     {
+        DontDestroyOnLoad(gameObject);
         characterController = GetComponent<CharacterController>();
         characterController.enabled = false;
         playerTransform.position = new Vector3(GameObject.Find("Players").transform.childCount * 10f, 0, 0);
