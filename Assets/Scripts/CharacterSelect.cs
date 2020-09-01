@@ -28,10 +28,6 @@ public class CharacterSelect : MonoBehaviour
     void Start()
     {
         availableCharacters = GetComponentInParent<AvailableCharacters>();
-        for (int i = 0; i < availableCharacters.available.Length; i++)
-        {
-            availableCharacters.available[i] = true;
-        }
         playerCamera.enabled = false;
         gamepadMove = GetComponent<GamepadMove>();
         playerInput = GetComponent<PlayerInput>();
@@ -68,6 +64,7 @@ public class CharacterSelect : MonoBehaviour
 
     private void Update()
     {
+        if(chosen) { return; }
         if (!availableCharacters.available[currentCharacter] && !chosen)
         {
             currentCharacter = (currentCharacter + 1) % characters.Length;
@@ -107,7 +104,6 @@ public class CharacterSelect : MonoBehaviour
         if (selectionCamera != null)
         {
             selectionCamera.enabled = false;
-            Destroy(selectionCamera);
         }
         playerCamera.enabled = true;
         playerInput.camera = playerCamera;

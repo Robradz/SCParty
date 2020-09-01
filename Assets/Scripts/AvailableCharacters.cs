@@ -11,20 +11,26 @@ public class AvailableCharacters : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        for (int i = 0; i < available.Length; i++)
+        {
+            available[i] = true;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        doneChoosing = true;
-        foreach (bool boolean in available)
+        int readyCount = 0;
+        for (int i = 0; i < available.Length; i++)
         {
-            if (boolean == true)
+            if (available[i] == false)
             {
-                doneChoosing = false;
-                break;
+                readyCount++;
             }
+        }
+        if (readyCount >= 3)
+        {
+            //SceneManager.LoadScene(1);
         }
     }
 }
