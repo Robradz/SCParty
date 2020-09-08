@@ -10,13 +10,15 @@ public class PlayerMisc : MonoBehaviour
 {
     [SerializeField] Transform playerTransform;
     CharacterController characterController;
+    Vector3 originalPosition;
 
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
         characterController = GetComponent<CharacterController>();
         characterController.enabled = false;
-        playerTransform.position = new Vector3(GameObject.Find("Players").transform.childCount * 10f, 0, 0);
+        originalPosition = new Vector3(GameObject.Find("Players").transform.childCount * 10f, 1f, 0);
+        playerTransform.position = originalPosition;
         characterController.enabled = true;
         gameObject.transform.parent = GameObject.Find("Players").transform;
         NamePlayer();
@@ -29,9 +31,11 @@ public class PlayerMisc : MonoBehaviour
         gameObject.name = "P" + GameObject.Find("Players").transform.childCount.ToString();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (playerTransform.position.y <= -15)
+        {
+            playerTransform.position = originalPosition;
+        }
     }
 }

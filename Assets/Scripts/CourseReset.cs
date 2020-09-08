@@ -13,10 +13,4 @@ public class CourseReset : MonoBehaviour
     {
         
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        other.gameObject.transform.position = new Vector3(Random.Range(-10f, 10f), 1, Random.Range(-10f, 10f));
-    }
-
 }
