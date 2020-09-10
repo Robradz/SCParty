@@ -37,5 +37,6 @@ public class PlayerMisc : MonoBehaviour
         {
             playerTransform.position = originalPosition;
         }
+        playerTransform.localScale = new Vector3(1,1,1);
     }
 }
