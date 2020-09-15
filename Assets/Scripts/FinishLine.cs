@@ -20,7 +20,8 @@ public class FinishLine : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")) { return; }
+        print("Trigger Entered");
+        if (!other.CompareTag("Player")) { return; }
         finishCanvas.enabled = true;
         winnerText.text = other.name + " wins!";
         Time.timeScale = 0;

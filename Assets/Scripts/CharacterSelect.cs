@@ -106,7 +106,7 @@ public class CharacterSelect : MonoBehaviour
             selectionCamera.enabled = false;
         }
         playerCamera.enabled = true;
-        playerInput.camera = playerCamera;
+        //playerInput.camera = playerCamera;
         PlayerCameraAlignment();
     }
 
