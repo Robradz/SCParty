@@ -17,7 +17,7 @@ public class PlayerMisc : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         characterController = GetComponent<CharacterController>();
         characterController.enabled = false;
-        originalPosition = new Vector3(-42f, 4f, 260f); //new Vector3(GameObject.Find("Players").transform.childCount * 10f, 1f, 0);
+        originalPosition = new Vector3(10f, 4f, 120f); //new Vector3(10f, 4f, 120f); new Vector3(-67f, 1f, 155f); new Vector3(GameObject.Find("Players").transform.childCount * 10f, 1f, 0);
         playerTransform.position = originalPosition;
         characterController.enabled = true;
         gameObject.transform.parent = GameObject.Find("Players").transform;
