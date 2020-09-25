@@ -129,7 +129,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh450598
+  m_Name: pb_Mesh362434
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -293,7 +293,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-157942
+  m_Name: pb_Mesh-60930
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -457,7 +457,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-155442
+  m_Name: pb_Mesh-60932
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1121,7 +1121,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-160138
+  m_Name: pb_Mesh-60934
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1429,7 +1429,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-154022
+  m_Name: pb_Mesh-60928
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1587,6 +1587,80 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1001 &1542009307034631771
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1542009304992398928, guid: 4e996a2b1984325408bd8c682386bbed,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.921567
+      objectReference: {fileID: 0}
+    - target: {fileID: 1542009304992398928, guid: 4e996a2b1984325408bd8c682386bbed,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.5230665
+      objectReference: {fileID: 0}
+    - target: {fileID: 1542009304992398928, guid: 4e996a2b1984325408bd8c682386bbed,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.631818
+      objectReference: {fileID: 0}
+    - target: {fileID: 1542009304992398928, guid: 4e996a2b1984325408bd8c682386bbed,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1542009304992398928, guid: 4e996a2b1984325408bd8c682386bbed,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1542009304992398928, guid: 4e996a2b1984325408bd8c682386bbed,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1542009304992398928, guid: 4e996a2b1984325408bd8c682386bbed,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1542009304992398928, guid: 4e996a2b1984325408bd8c682386bbed,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1542009304992398928, guid: 4e996a2b1984325408bd8c682386bbed,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1542009304992398928, guid: 4e996a2b1984325408bd8c682386bbed,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1542009304992398928, guid: 4e996a2b1984325408bd8c682386bbed,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1542009304992398929, guid: 4e996a2b1984325408bd8c682386bbed,
+        type: 3}
+      propertyPath: m_Name
+      value: MazePuzzle
+      objectReference: {fileID: 0}
+    - target: {fileID: 1542009304992398935, guid: 4e996a2b1984325408bd8c682386bbed,
+        type: 3}
+      propertyPath: randomObject
+      value: 
+      objectReference: {fileID: 1206503217}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4e996a2b1984325408bd8c682386bbed, type: 3}
 --- !u!1001 &8934993381806169345
 PrefabInstance:
   m_ObjectHideFlags: 0
