@@ -79,7 +79,7 @@ public class GamepadMove : MonoBehaviour
 
     private IEnumerator JumpEvent()
     {
-        charController.slopeLimit = 90f;
+        //charController.slopeLimit = 90f;
         float timeInAir = 0.0f;
 
         do
@@ -90,7 +90,7 @@ public class GamepadMove : MonoBehaviour
             yield return null;
         } while (!charController.isGrounded && charController.collisionFlags != CollisionFlags.Above);
 
-        charController.slopeLimit = 45f;
+        //charController.slopeLimit = 45f;
         isJumping = false;
     }
 

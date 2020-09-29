@@ -29,12 +29,12 @@ public class LogicPuzzle : MonoBehaviour
         names = new string[] { "Paul", "Tristan", "Robbie", "Joey" };
         names = RandomizeStringArray(names);
         AssignNames();
-        priceSolution = new string[] { "5.99", "7.99", "6.99", "4.99"};
+        priceSolution = new string[] { "5.99", "7.99", "6.99", "4.99" };
         drinkSolution = new string[] { "Slurpee", "Kombucha", "Coca-Cola", "Gatorade" };
         snackSolution = new string[] { "Big Bite", "Candy", "Taquitos", "Takis" };
     }
 
-    
+
 
     // Update is called once per frame
     void Update()
@@ -75,11 +75,11 @@ public class LogicPuzzle : MonoBehaviour
         }
         return newNames;
     }
-    
+
     private void AssignNames()
     {
         answerText.text = names[0] + "     " + names[1] + "     " + names[2] + "     " + names[3];
-        clueText.text = 
+        clueText.text =
             @"1.The one who got the kombucha paid more than the one who got the Coca-Cola
     2.The person who paid $5.99 didn't buy the Takis.
     3. " + names[2] + @" ordered the Taquitos.
@@ -88,6 +88,6 @@ public class LogicPuzzle : MonoBehaviour
     6.The one who got the Slurpee paid more than the one who got the Gatorade.
     7." + names[1] + " paid 1 dollar more than the person who ordered Taquitos.";
         gridNames.text = names[0] + "\n" + names[1] + "\n" + names[2] + "\n" + names[3];
-        gridNames2.text = gridNames.text;
+        gridNames2.text = "4.99\n5.99\n6.99\n7.99";
     }
 }

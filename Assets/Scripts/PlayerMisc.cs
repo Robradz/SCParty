@@ -11,7 +11,7 @@ public class PlayerMisc : MonoBehaviour
     [SerializeField] Transform playerTransform;
     CharacterController characterController;
     [SerializeField] Camera playerCamera;
-    Vector3 originalPosition;
+    public Vector3 originalPosition;
     private float lastHit = 0;
 
     private void Start()
@@ -19,7 +19,7 @@ public class PlayerMisc : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         characterController = GetComponent<CharacterController>();
         characterController.enabled = false;
-        originalPosition = new Vector3(-67f, 1f, 155f); //new Vector3(10f, 4f, 120f); new Vector3(-67f, 1f, 155f); new Vector3(GameObject.Find("Players").transform.childCount * 10f, 1f, 0);
+        originalPosition = new Vector3(GameObject.Find("Players").transform.childCount * 10f, 1f, 0); //new Vector3(10f, 4f, 120f); new Vector3(-67f, 1f, 155f); new Vector3(GameObject.Find("Players").transform.childCount * 10f, 1f, 0);
         playerTransform.position = originalPosition;
         characterController.enabled = true;
         gameObject.transform.parent = GameObject.Find("Players").transform;
@@ -35,7 +35,7 @@ public class PlayerMisc : MonoBehaviour
 
     private void Update()
     {
-        if (playerTransform.position.y <= -3)
+        if (playerTransform.position.y <= -3.5)
         {
             playerTransform.position = originalPosition;
         }
@@ -53,7 +53,7 @@ public class PlayerMisc : MonoBehaviour
         {
             lastHit = Time.time;
             RaycastHit hit;
-            if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.TransformDirection(Vector3.forward), out hit, 20f))
+            if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.TransformDirection(Vector3.forward), out hit, 200f))
             {
                 try
                 {
@@ -66,6 +66,13 @@ public class PlayerMisc : MonoBehaviour
                 {
                     ButtonScript button = hit.transform.GetComponent<ButtonScript>();
                     button.ChangeOption();
+                }
+                catch { /* do nothing */ }
+
+                try
+                {
+                    Boat boat = hit.transform.GetComponent<Boat>();
+                    boat.SpinBoat();
                 }
                 catch { /* do nothing */ }
             }
